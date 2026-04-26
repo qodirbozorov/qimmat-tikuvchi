@@ -19,7 +19,6 @@ export function CTAButton({ label, onClick, className = '' }: CTAButtonProps) {
         width: '100%',
         height: 'clamp(66px, 19cqw, 82px)',
         borderRadius: 12,
-        border: `1px solid ${GOLD}`,
       }}
     >
       <span style={{

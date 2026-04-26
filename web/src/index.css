@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: 'Instrument Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Give #root a definite width so container queries resolve correctly */
+#root {
+  width: 100%;
+}
+
+/* Container query context — all cqw units reference this */
+.page-container {
+  container-type: inline-size;
+}
+
+/* Lazy-load fade-in */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* Hero badge pills */
+.pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: clamp(6px, 2cqw, 8px) clamp(12px, 4.1cqw, 17px);
+  border-radius: 45px;
+  border: 1px solid rgb(225, 176, 133);
+  color: #fff;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: clamp(12px, 3.5cqw, 14px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* CTA Button */
+.cta-btn {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  width: 100%;
+  background: linear-gradient(0deg, rgb(18,18,18), rgb(8,8,8), rgb(22,22,22), rgb(8,8,8));
+  background-size: 300% 300%;
+  animation: fillShine 12s ease infinite;
+}
+@keyframes fillShine {
+  0%   { background-position: 0% 0%; }
+  25%  { background-position: 100% 0%; }
+  50%  { background-position: 100% 100%; }
+  75%  { background-position: 0% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* Traveling shine on border */
+.cta-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 1px;
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(255, 220, 160, 0.9) 50%,
+    transparent 80%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  background-size: 200% 100%;
+  animation: borderShine 6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes borderShine {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Expert card float */
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-4px); }
+}
+.float-card {
+  animation: floatCard 4s ease-in-out infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: rgba(225, 176, 133, 0.4); border-radius: 4px; }

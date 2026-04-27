@@ -105,18 +105,18 @@ export function RegistrationModal({ onClose, onSuccess }: Props) {
 
   return (
     <div className="modal-overlay" onKeyDown={handleKeyDown}>
-      {/* Close button - Fixed at the top right of the overlay */}
+      {/* Close button - Fixed at the top right */}
       <button
         onClick={onClose}
         style={{
-          position: 'absolute',
+          position: 'fixed',
           top: 16,
           right: 16,
           background: 'none',
           border: 'none',
           cursor: 'pointer',
           padding: 8,
-          zIndex: 10,
+          zIndex: 100,
         }}
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="2" strokeLinecap="round">
@@ -124,9 +124,6 @@ export function RegistrationModal({ onClose, onSuccess }: Props) {
           <line x1="6" y1="6" x2="18" y2="18" />
         </svg>
       </button>
-
-      {/* Top Spacer for vertical centering */}
-      <div style={{ flex: 1, minHeight: 60 }}></div>
 
       <div style={{
         position: 'relative',
@@ -284,9 +281,6 @@ export function RegistrationModal({ onClose, onSuccess }: Props) {
           </span>
         </button>
       </div>
-
-      {/* Bottom Spacer */}
-      <div style={{ flex: 1, minHeight: 40 }}></div>
     </div>
   );
 }

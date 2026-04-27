@@ -58,7 +58,7 @@ function LandingPage() {
         <BonusCard />
 
         <div className="reveal reveal-delay-3" style={{ padding: '14px 20px 0 20px' }}>
-          <CTAButton label="BONUSNI OLISH" onClick={handleOpenModal} />
+          <CTAButton label="DARSGA QATNASHISH" onClick={handleOpenModal} />
         </div>
       </div>
 

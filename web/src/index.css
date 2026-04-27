@@ -141,18 +141,12 @@ body {
 /* Registration modal */
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  height: 100dvh; /* Klaviatura va mobil browser panellarini inobatga oladigan aniq balandlik */
+  inset: 0;
   z-index: 9999;
-  background: #000; /* Orqa fonni to'liq qoplaydi */
-  display: flex;
-  flex-direction: column;
+  background: #000;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  padding: 0 20px;
+  padding: 80px 20px 40px 20px; /* Tepadan kontent uchun joy tashlandi */
   animation: modalFadeIn 0.2s ease;
 }
 @keyframes modalFadeIn {

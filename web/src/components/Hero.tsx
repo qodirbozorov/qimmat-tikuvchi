@@ -37,7 +37,7 @@ export function Hero() {
         display: 'flex', flexDirection: 'row',
         gap: 'clamp(5px, 2cqw, 9px)',
       }}>
-        <div className="pill">VEBINAR</div>
+        <div className="pill">YOPIQ DARS</div>
         <div className="pill" style={{ gap: 'clamp(5px, 1.9cqw, 8px)' }}>
           <CalendarIcon />
           <span>6-7 MAY</span>

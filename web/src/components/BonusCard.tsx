@@ -21,7 +21,7 @@ export function BonusCard() {
           lineHeight: 1, color: '#fff', zIndex: 2,
         }}>
           Tikuv<br />moshinkasi<br />va manekin<br />
-          <strong style={{ fontWeight: 700 }}>bonus</strong>
+          <strong style={{ fontWeight: 700 }}>SOVG‘A</strong>
         </div>
 
         {/* Sewing machine image */}

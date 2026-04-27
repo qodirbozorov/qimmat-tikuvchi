@@ -25,12 +25,15 @@ async function initDB() {
 }
 
 // ─── Middleware ───────────────────────────────────────────
-const ALLOWED_ORIGINS = process.env.ALLOWED_ORIGINS
-  ? process.env.ALLOWED_ORIGINS.split(',')
-  : ['http://localhost:5173'];
-app.use(cors({ origin: ALLOWED_ORIGINS }));
-app.use(express.json());
+app.use(cors({
+  origin: true,                    // Bu istalgan origin ga ruxsat beradi (*)
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,               // agar cookie yoki auth kerak bo'lsa
+  optionsSuccessStatus: 204
+}));
 
+app.use(express.json());
 // ─── POST /api/register ─────────────────────────────────
 app.post('/api/register', async (req, res) => {
   const { name, phone } = req.body;

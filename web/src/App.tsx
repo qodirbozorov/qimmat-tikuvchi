@@ -50,7 +50,7 @@ function LandingPage() {
       }}>
         <Hero />
 
-        <div className="reveal" style={{ padding: '0 20px' }}>
+        <div className="reveal" style={{ padding: '0 20px', marginTop: -80, position: 'relative', zIndex: 3 }}>
           <CTAButton label="DARSGA QATNASHISH" onClick={handleOpenModal} />
         </div>
 

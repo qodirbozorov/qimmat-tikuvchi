@@ -94,7 +94,7 @@ export function Hero() {
       {/* Expert info card — compact */}
       <div className="float-card" style={{
         position: 'absolute',
-        left: '32%', right: '12%', bottom: '12%',
+        left: '32%', right: '12%', bottom: '26%',
         borderRadius: 12,
         backgroundColor: 'rgba(0,0,0,0.88)',
         border: `1px solid ${GOLD}`,
@@ -131,7 +131,7 @@ export function Hero() {
         display: 'flex', alignItems: 'flex-end', zIndex: 2,
       }}>
         <div style={{
-          margin: '0 auto',
+          margin: '0 auto 80px',
           width: '75.7%',
           borderRadius: '11px 11px 0 0',
           background: 'linear-gradient(rgb(255,255,255) 0%, rgb(153,153,153) 100%)',

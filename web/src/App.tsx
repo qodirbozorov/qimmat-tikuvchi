@@ -21,15 +21,21 @@ function LandingPage() {
   const handleOpenModal = () => setModalOpen(true);
   const handleCloseModal = () => setModalOpen(false);
 
-  const handleSuccess = (_name: string, _phone: string) => {
+  const handleSuccess = async (name: string, phone: string) => {
     setModalOpen(false);
 
     if (window.fbq) {
       window.fbq('track', 'Lead');
     }
 
-    // TODO: send to backend
     navigate('/thankyou');
+
+    // Fire-and-forget — foydalanuvchi kutmaydi
+    fetch(`${import.meta.env.VITE_API_URL || ''}/api/register`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, phone }),
+    }).catch(() => {});
   };
 
   return (

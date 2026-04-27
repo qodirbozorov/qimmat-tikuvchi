@@ -28,7 +28,7 @@ export function BonusCard() {
         <div style={{
           position: 'absolute', right: 0, top: '7.1%',
           width: '61.3%', height: '85.7%',
-          background: 'url(/assets/8d95f8fdda2e.png) center / cover no-repeat',
+          background: 'url(/assets/8d95f8fdda2e.webp) center / cover no-repeat',
         }} />
 
         {/* Left fade */}

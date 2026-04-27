@@ -138,6 +138,49 @@ body {
 .logo-draw path:nth-child(13) { animation-delay: 0.6s; }
 .logo-draw path:nth-child(14) { animation-delay: 0.65s; }
 
+/* Registration modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.97);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: modalFadeIn 0.2s ease;
+}
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal-input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(225, 176, 133, 0.25);
+  background: rgb(18, 18, 18);
+  color: #fff;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.modal-input:focus {
+  border-color: rgb(225, 176, 133);
+}
+.modal-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.modal-error {
+  display: block;
+  margin-top: 6px;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 12px;
+  color: #e85454;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: #000; }

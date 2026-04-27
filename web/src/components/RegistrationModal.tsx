@@ -105,34 +105,39 @@ export function RegistrationModal({ onClose, onSuccess }: Props) {
 
   return (
     <div className="modal-overlay" onKeyDown={handleKeyDown}>
+      {/* Close button - Fixed at the top right of the overlay */}
+      <button
+        onClick={onClose}
+        style={{
+          position: 'absolute',
+          top: 16,
+          right: 16,
+          background: 'none',
+          border: 'none',
+          cursor: 'pointer',
+          padding: 8,
+          zIndex: 10,
+        }}
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="2" strokeLinecap="round">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+
+      {/* Top Spacer for vertical centering */}
+      <div style={{ flex: 1, minHeight: 60 }}></div>
+
       <div style={{
         position: 'relative',
         width: '100%',
         maxWidth: 400,
-        margin: 'auto',
+        margin: '0 auto',
         display: 'flex',
         flexDirection: 'column',
         gap: 20,
       }}>
-        {/* Close button */}
-        <button
-          onClick={onClose}
-          style={{
-            position: 'absolute',
-            top: -44,
-            right: 0,
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer',
-            padding: 8,
-          }}
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="2" strokeLinecap="round">
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        </button>
-
+        
         {/* Title */}
         <h2 style={{
           fontFamily: "'Cormorant Unicase', serif",
@@ -265,6 +270,7 @@ export function RegistrationModal({ onClose, onSuccess }: Props) {
             width: '100%',
             height: 56,
             borderRadius: 12,
+            marginTop: 8,
           }}
         >
           <span style={{
@@ -278,6 +284,9 @@ export function RegistrationModal({ onClose, onSuccess }: Props) {
           </span>
         </button>
       </div>
+
+      {/* Bottom Spacer */}
+      <div style={{ flex: 1, minHeight: 40 }}></div>
     </div>
   );
 }

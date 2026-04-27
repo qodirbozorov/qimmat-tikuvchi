@@ -109,7 +109,7 @@ export function RegistrationModal({ onClose, onSuccess }: Props) {
         position: 'relative',
         width: '100%',
         maxWidth: 400,
-        margin: '0 20px',
+        margin: 'auto',
         display: 'flex',
         flexDirection: 'column',
         gap: 20,
@@ -193,7 +193,7 @@ export function RegistrationModal({ onClose, onSuccess }: Props) {
                 }}
               >
                 <span style={{ fontSize: 18 }}>{country.flag}</span>
-                <span style={{ color: '#fff', fontSize: 14 }}>{country.dial}</span>
+                <span style={{ color: '#fff', fontSize: 16 }}>{country.dial}</span>
                 <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style={{ marginLeft: 2 }}>
                   <path d="M1 1L5 5L9 1" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" strokeLinecap="round" />
                 </svg>
@@ -229,7 +229,7 @@ export function RegistrationModal({ onClose, onSuccess }: Props) {
                         cursor: 'pointer',
                         color: '#fff',
                         fontFamily: "'Instrument Sans', sans-serif",
-                        fontSize: 14,
+                        fontSize: 16,
                       }}
                     >
                       <span style={{ fontSize: 18 }}>{c.flag}</span>
